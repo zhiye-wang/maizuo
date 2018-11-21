@@ -1,12 +1,13 @@
 <template>
-  <div >
-   	<ul>
-   		<li>1111</li>
-   		<li>2222</li>
-   		<li>3333</li>
-   	</ul>
-   
-  </div>
+  <aside>
+    <div >
+     	<ul>
+        <router-link to="/home" tag="li" activeClass="active">home</router-link>
+        <router-link to="/film" tag="li" activeClass="active">film</router-link>
+     		<router-link to="/card" tag="li" activeClass="active">card</router-link>
+     	</ul>    
+    </div>
+</aside>
 </template>
 
 <script>
@@ -22,15 +23,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-		div{
-			background: black;
-			color: white;
-			width: 200px;
-
-			li{
-				color:white;
-			}
-		}
-
+		aside{
+      position:fixed;
+      top:50px;
+      left:0px;
+      width:50%;
+      height:100%;
+      background:black;
+      color:white;
+      li{
+        padding:10px;
+      }
+    }
+    .active{
+      background:red;
+    }
 
 </style>

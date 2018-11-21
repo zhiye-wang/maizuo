@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <navbar @event="isShow=!isShow"></navbar>
+    <navbar @event="isShow=!isShow">
+      <i class="iconfont icon-category" @click="isShow=!isShow"></i>
+    </navbar>
     <sidebar v-show="isShow"></sidebar>
 
     <router-view></router-view> <!-- 路由容器 -->
