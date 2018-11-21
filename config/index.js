@@ -12,12 +12,13 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
 
-            // "/Service":{
-            //     target:"https://m.mtime.cn",
-            //     host:"m.mtime.cn",
-            //     changeOrigin:true   
+            "/api":{
+                target:"https://webservice.juanpi.com",
+                host:"webservice.juanpi.com",
+                changeOrigin:true   
 
-            // }
+            },
+             
     },
 
     // Various Dev Server settings

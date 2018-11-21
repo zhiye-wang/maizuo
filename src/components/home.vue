@@ -6,6 +6,7 @@
 </template>
 
 <script>
+	import axios from "axios"
 export default {
   name: 'home',
   data () {
@@ -14,13 +15,13 @@ export default {
     }
   },
 
-  // mounted(){		""
-  // 	axios.get("/Service/callback.mi/Showtime/LocationMovies.api?locationId=290&t=2018112114161721623").then(res=>{
-  // 		console.log(res)
-  // 	}).catch(error=>{
-  // 		console.log(error)
-  // 	})
-  // }
+  mounted(){		
+  	axios.get("/api/getGoods?page=1&zy_ids=p8_c4_l4_0&app_name=zhe&catname=tab_hpzc&flag=tab_hpzc").then(res=>{
+  		console.log(res)
+  	}).catch(error=>{
+  		console.log(error)
+  	})
+  }
 }
 </script>
 
