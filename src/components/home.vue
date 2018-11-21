@@ -19,7 +19,7 @@
     </div>
 
     <swipe class="my-swipe">
-	  <swipe-item class="slide1" v-for="data in datalist">
+	  <swipe-item class="slide1" v-for="data in datalist"  :key="data.id">
 	  	<img :src="data.pic_url"/>
 	  </swipe-item>
 	
