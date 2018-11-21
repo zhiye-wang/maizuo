@@ -3,9 +3,12 @@
     <navbar @event="isShow=!isShow">
       <i class="iconfont icon-category" @click="isShow=!isShow"></i>
     </navbar>
-    <sidebar v-show="isShow"></sidebar>
+    <sidebar v-show="isShow" @event="isShow=!isShow"></sidebar>
 
-    <router-view></router-view> <!-- 路由容器 -->
+    <section>
+      <router-view></router-view> <!-- 路由容器 -->
+    </section>
+    
   </div>
 </template>
 
@@ -44,5 +47,9 @@ export default {
 *{
   padding: 0;
   margin: 0;
+}
+section{
+  position: relative;
+  top: 50px;
 }
 </style>

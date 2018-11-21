@@ -41,6 +41,7 @@ export default {
       line-height:50px;
       background: black;
       color:white;
+      z-index:10;
       .left{
         float:left;
       }
