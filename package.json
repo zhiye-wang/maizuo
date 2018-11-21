@@ -14,9 +14,11 @@
     "axios": "^0.18.0",
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
+    "swipe": "^1.7.7",
     "swiper": "^4.4.2",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-swipe": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

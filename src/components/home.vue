@@ -18,6 +18,14 @@
             <div class="swiper-scrollbar"></div>
     </div>
 
+    <swipe class="my-swipe">
+	  <swipe-item class="slide1" v-for="data in datalist">
+	  	<img :src="data.pic_url"/>
+	  </swipe-item>
+	
+	</swipe>
+
+
    	<ul>
    		<li v-for="data in datalist" :key="data.id">
    			<img :src="data.pic_url" alt="">
@@ -33,6 +41,9 @@ import axios from "axios"
 import Swiper from "swiper"
 import "swiper/dist/css/swiper.css"
 
+require('vue-swipe/dist/vue-swipe.css');
+import { Swipe, SwipeItem } from 'vue-swipe';
+
 export default {
   name: 'home',
   data(){
@@ -41,6 +52,7 @@ export default {
   	}
    
   },
+ 
 
   mounted(){		
   	axios.get("/api/getGoods?page=1&zy_ids=p8_c4_l4_0&app_name=zhe&catname=tab_hpzc&flag=tab_hpzc").then(res=>{
@@ -66,11 +78,12 @@ export default {
   	}).catch(error=>{
   		console.log(error)
   	})
-  	
-  	
 
-
-  }
+  },
+   components: {
+    'swipe':Swipe,
+    'swipe-item': SwipeItem
+  },
 }
 </script>
 
@@ -81,4 +94,25 @@ export default {
 
 	}
 
+	.my-swipe {
+  height: 200px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.slide1 {
+  background-color: #0089dc;
+  color: #fff;
+}
+
+.slide2 {
+  background-color: #ffd705;
+  color: #000;
+}
+
+.slide3 {
+  background-color: #ff2d4b;
+  color: #fff;
+}
 </style>
