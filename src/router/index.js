@@ -14,12 +14,15 @@ import Film from "../components/film"
 import Card from "../components/card"
 import Nowplaying from "../components/nowplaying"
 import Comingsoon from "../components/comingsoon"
+import Detail from "../components/detail"
 
 Vue.use(Router) //注册路由
 //路由配置
 
 
 export default new Router({ //通过router构造函数构造出对象
+mode:"history",
+
   routes: [
     {
       path:"/home",
@@ -36,6 +39,11 @@ export default new Router({ //通过router构造函数构造出对象
         {
           path:"comingsoon",
           component:Comingsoon
+        },
+        { 
+          path:"/",
+          redirect:"/film/nowplaying"
+
         }
 
 
@@ -44,6 +52,10 @@ export default new Router({ //通过router构造函数构造出对象
     {
       path:'/card',
       component:Card
+    },
+    {
+      path:"/detail/:wangzhiyeid",
+      component:Detail
     },
      {
       path:"*",

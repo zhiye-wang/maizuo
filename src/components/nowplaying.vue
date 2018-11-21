@@ -2,11 +2,21 @@
   <div >
    	nowplaying
    <ul>
-	   	<li v-for="data in datalist">
+	   	<!-- <router-link v-for="data in datalist" tag="li" :to="'/detail/'+data.goods_id" >
 	   		<img :src="data.pic_url" alt="">
 	   		<h3>{{data.title}}</h3>
 	   		<p>{{data.title_long}}</p>
-	   	</li>
+        <span>{{data.goods_id}}</span>
+	   	</router-link> -->
+
+        <li v-for="data in datalist"  @click="handleClick(data.goods_id)" :key = "data.goods_id">
+        <img :src="data.pic_url" alt="">
+        <h3>{{data.title}}</h3>
+        <p>{{data.title_long}}</p>
+        <span>{{data.goods_id}}</span>
+      </li>
+
+
    </ul>
   </div>
 </template>
@@ -20,6 +30,13 @@ export default {
      	datalist:[]
     }
   },
+  methods:{
+      handleClick(id){
+
+       this.$router.push('/detail/'+id)
+       console.log(id)
+      }
+  },
   mothods:{
 
   },
@@ -30,7 +47,7 @@ export default {
   		
   		
   		
-  		this.datalist = res.data.data.goods
+  		
   	}).catch(error=>{
   		console.log(error)
   	})
